@@ -1,6 +1,7 @@
 # react-movie-app
 
 #About the App
+
 This Movie App is my Personal Project as a self-taught Front-end Developer.
 
 #Technologies Used
