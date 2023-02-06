@@ -1,23 +1,37 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import MenuBar from "./components/MenuBar";
 import { BrowserRouter as Router } from "react-router-dom";
 
+export const themeContext = createContext();
+
 function App() {
+  //* state
+  const [darkMode, setDarkMode] = useState(true);
+
+  const handleToggleDarkMode = () => {
+    setDarkMode((prevMode) => !prevMode);
+  };
+
   return (
     <Router>
-      <div>
-        <div>
-          <Header />
+      <themeContext.Provider value={{ darkMode }}>
+        <div className={darkMode ? "dark" : ""}>
+          <div>
+            <Header
+              handleToggleDarkMode={handleToggleDarkMode}
+              darkMode={darkMode}
+            />
+          </div>
+          <div className="py-20 pt-24 dark:bg-[#0b090a] bg-slate-50 min-h-screen w-full">
+            <Main />
+          </div>
+          <div>
+            <MenuBar />
+          </div>
         </div>
-        <div className="py-24 bg-slate-50 min-h-screen">
-          <Main />
-        </div>
-        <div>
-          <MenuBar />
-        </div>
-      </div>
+      </themeContext.Provider>
     </Router>
   );
 }

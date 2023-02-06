@@ -27,21 +27,18 @@ function MenuBar() {
   ];
 
   let activeStyle = {
-    backgroundColor: "#7f1d1d",
+    backgroundColor: "#991b1bd1",
   };
-
   return (
-    <div className="h-14 w-full bg-red-800 fixed bottom-0">
+    <div className="h-11 w-full bg-[#7f1d1d] dark:bg-[#660708] fixed bottom-0">
       <ul className="flex items-center justify-center h-14">
         {icons.map((data, index) => (
           <NavLink
+            key={index}
             to={data.to}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            <li
-              key={index}
-              className="text-gray-300 cursor-pointer hover:bg-red-900 px-8 p-[18px]"
-            >
+            <li className="text-gray-300 cursor-pointer hover:bg-[#991b1b] px-6 p-[14px] mb-2">
               {data.icon}
             </li>
           </NavLink>
