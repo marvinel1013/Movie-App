@@ -13,7 +13,7 @@ function Header(props) {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full flex px-7 md:px-12 items-center justify-between p-8 h-20 bg-white dark:bg-[#161a1d] shadow-sm dark:shadow-none shadow-gray-300">
+    <div className="fixed top-0 left-0 w-full flex px-7 md:px-12 items-center justify-between p-8 h-20 bg-white dark:bg-[#000] shadow-sm dark:shadow-none shadow-gray-300">
       <div
         className="flex items-center gap-1 cursor-pointer"
         onClick={scrollNavigate}
